@@ -73,26 +73,26 @@ function sendMessage() {
     let message = input.value.toLowerCase().trim();
     let chatbox = document.getElementById("chatbox");
 
-    // Don't do anything if input is empty
+    
     if (message === "") {
         return;
     }
 
-    // Show user's message
+    
     chatbox.innerHTML += `
         <div class="user">${input.value}</div>
     `;
 
     let reply = "";
 
-    // Greeting
+    
     if (message.includes("hello") || message.includes("hi")) {
 
         reply = "Hello! How can I assist you today?";
 
     }
 
-    // Order status
+    
     else if (
         message.includes("where is my order") ||
         message.includes("order status") ||
@@ -103,52 +103,52 @@ function sendMessage() {
 
     }
 
-    // Return policy
+    
     else if (
-        message.includes("how do i return an order") ||
-        message.includes("return policy")
+        message.includes("how do i return my order") ||
+        message.includes("what is your return policy")
     ) {
 
         reply = "You can return an item within 30 days of purchase. Please visit our returns page for more information.";
 
     }
 
-    // Delivery
+  
     else if (
-        message.includes("delivery cost") ||
-        message.includes("free shipping")
+        message.includes("what does delivery cost") ||
+        message.includes("free shipping is available?")
     ) {
 
         reply = "Standard shipping takes 3-5 business days and is free on orders over $50. Express shipping is available for an additional fee.";
 
     }
 
-    // Payment
+   
     else if (
-        message.includes("payment methods") ||
-        message.includes("payment on delivery") ||
-        message.includes("upi") ||
-        message.includes("emi") ||
-        message.includes("installment")
+        message.includes("what are the payment methods") ||
+        message.includes("can i pay on delivery") ||
+        message.includes("can i pay with upi") ||
+        message.includes("emi otions are available?") ||
+        message.includes("what are installment plans")
     ) {
 
         reply = "We accept major credit cards, debit cards, PayPal and UPI. Payment on delivery is available for select items. We also offer EMI and installment plans.";
 
     }
 
-    // Stock
+    
     else if (
-        message.includes("in stock") ||
-        message.includes("stock")
+        message.includes("is the product in stock") ||
+        message.includes("is the item in stock")
     ) {
 
         reply = "Let me check that for you! Can you please provide the exact product name or SKU number?";
 
     }
 
-    // SKU
+   
     else if (
-        message.includes("sku number") ||
+        message.includes("product name") ||
         message.includes("123456789")
     ) {
 
@@ -156,71 +156,72 @@ function sendMessage() {
 
     }
 
-    // Product recommendation
+    
     else if (
-        message.includes("recommend a product") ||
-        message.includes("gift for my friend")
+        message.includes("can you suggest the best product available") ||
+        message.includes("i want a gift for my friend")
     ) {
 
-        reply = "Yes, I can recommend some products based on your friend's interests. Can you please tell me more about what they like?";
+        reply = "Yes, I can recommend some products. <products list>";
 
     }
 
-    // Customer service
+    
     else if (
-        message.includes("real help with my order") ||
-        message.includes("customer service") ||
-        message.includes("customer care number")
+        message.includes("i want to talk to a human representative") ||
+        message.includes("i need to speak to customer service") ||
+        message.includes("what is the customer care number")
     ) {
 
-        reply = "I'm sorry to hear that you're having issues with your order. You can speak to a customer service representative by calling 1-800-123-4567.";
+        reply = "I'm sorry to hear that if you're having issues with your order. You can speak to a customer service representative by calling 1-800-123-4567.";
 
     }
 
-    // Angry customer
+  
     else if (
         message.includes("you are useless") ||
-        message.includes("want my money back") ||
-        message.includes("worst service")
+        message.includes("i want my money back") ||
+        message.includes("worst service ever")
     ) {
 
         reply = "I'm sorry for the frustration. Please provide your order number and I will connect you to a senior human agent.";
 
     }
 
-    // International shipping
+   
     else if (
-        message.includes("ship internationally") ||
-        message.includes("international shipping")
+        message.includes("do you ship internationally?") ||
+        message.includes("how much international shipping costs?")
     ) {
 
-        reply = "Yes, we do ship internationally.";
+        reply = "Yes, we do ship internationally. It costs $15 for standard international shipping and $30 for express international shipping.";
 
     }
 
-    // Delivery problem
+    
     else if (
-        message.includes("not at home") ||
-        message.includes("change my delivery address")
+        message.includes("i am not at home") ||
+        message.includes("i want tochange my delivery address")
     ) {
 
         reply = "If you miss your delivery, our courier will make two more delivery attempts on working business days. You can also reschedule your delivery or change your delivery address using your tracking link or by contacting customer service.";
 
     }
 
-    // Payment failed
+    
     else if (
-        message.includes("payment failed") ||
-        message.includes("money was deducted")
+        message.includes("my payment failed") ||
+        message.includes("money was deducted but order failed") ||
+        message.includes("where can i download my tax invoice for my order?")
     ) {
 
-        reply = "If your money was deducted but the order failed, the amount will automatically be refunded to your account within 3-5 business days.";
+        reply = "If your money was deducted but the order failed, the amount will automatically be refunded to your account within 3-5 business days. you can download your tax invoice from your order history page on our website.";
 
     }
 
-    // Tax invoice
+  
     else if (
-        message.includes("tax invoice") ||
+        message.includes("i want my tax invoice") ||
         message.includes("download my invoice")
     ) {
 
@@ -228,42 +229,42 @@ function sendMessage() {
 
     }
 
-    // Password
+   
     else if (
-        message.includes("forgot my password") ||
-        message.includes("update my email address")
+        message.includes("i forgot my password") ||
+        message.includes("i want to update my email address")
     ) {
 
         reply = "To reset your password, please enter the email address associated with your account and I will send you a secure password reset link.";
 
     }
 
-    // Rewards
+    
     else if (
-        message.includes("redeem my reward points") ||
-        message.includes("gift cards") ||
-        message.includes("reward points")
+        message.includes("i want to redeem my reward points") ||
+        message.includes("i want to use my gift cards") ||
+        message.includes("i want to check my reward points")
     ) {
 
         reply = "You can redeem your reward points or gift cards during checkout. Multiple gift cards or reward points can also be used for a single purchase where supported.";
 
     }
 
-    // Question fallback
+    
     else if (message.includes("?")) {
 
         reply = "Yes! How can I help you?";
 
     }
 
-    // Unknown message
+   
     else {
 
         reply = "Sorry, I didn't understand that. Please try again.";
 
     }
 
-       // Show bot reply
+       
     chatbox.innerHTML += `
         <div class="bot">${reply}</div>
     `;
@@ -280,13 +281,13 @@ requestAnimationFrame(() => {
     });
 });
 
-    // Clear input
+   
     input.value = "";
 
 }
 
 
-// Press Enter to send the message
+
 document.getElementById("userInput").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         sendMessage();
