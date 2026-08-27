@@ -37,7 +37,7 @@ height: 100px;
 }
 h2{
     text-align: center;
-    background-color:#07073e;
+    background-color:#101087;
     color: #f0ffff;
     padding: 10px;
     margin: 0;
@@ -60,7 +60,7 @@ h2{
 
     padding: 10px;
 
-    background-color:  #4c21f8;
+    background-color:  #371bd8;
 }
 /* .bot,.user{
     display: flex;
